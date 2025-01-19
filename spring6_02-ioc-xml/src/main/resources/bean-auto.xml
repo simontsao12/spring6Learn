@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--根據類型自動裝配-->
+    <!--
+    <bean id="userDao" class="com.atsimoncc.spring6.iocxml.auto.dao.UserDaoImpl"></bean>
+    <bean id="userService" class="com.atsimoncc.spring6.iocxml.auto.service.UserServiceImpl"
+          autowire="byType"></bean>
+    <bean id="userController" class="com.atsimoncc.spring6.iocxml.auto.controller.UserController"
+          autowire="byType"></bean>
+    -->
+    <!--根據名稱自動裝配 要確保類別的屬性名要與配置文件的bean id名稱相同-->
+    <bean id="userDao" class="com.atsimoncc.spring6.iocxml.auto.dao.UserDaoImpl"></bean>
+    <bean id="userService" class="com.atsimoncc.spring6.iocxml.auto.service.UserServiceImpl"
+          autowire="byName"></bean>
+    <bean id="userController" class="com.atsimoncc.spring6.iocxml.auto.controller.UserController"
+          autowire="byName"></bean>
+</beans>

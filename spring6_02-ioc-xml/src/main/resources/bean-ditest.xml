@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+    引入外部bean:
+    1 建立兩個物件: dept和emp
+    2 在emp的bean標籤裡面使用property引入dept的bean
+    -->
+    <bean id="dept" class="com.atsimoncc.spring6.iocxml.ditest.Dept">
+        <property name="dname" value="資訊部"></property>
+    </bean>
+<!--    <bean id="emp" class="com.atsimoncc.spring6.iocxml.ditest.Emp">-->
+<!--        <property name="ename" value="lucy"></property>-->
+<!--        <property name="age" value="50"></property>-->
+<!--        <property name="dept" ref="dept"></property>-->
+<!--    </bean>-->
+    <!--使用內部bean-->
+<!--    <bean id="emp" class="com.atsimoncc.spring6.iocxml.ditest.Emp">-->
+<!--        <property name="ename" value="mary"></property>-->
+<!--        <property name="age" value="20"></property>-->
+<!--        <property name="dept">-->
+<!--            <bean id="dept" class="com.atsimoncc.spring6.iocxml.ditest.Dept">-->
+<!--                <property name="dname" value="暗部"></property>-->
+<!--            </bean>-->
+<!--        </property>-->
+<!--    </bean>-->
+    <!--級聯賦值-->
+    <bean id="dept3" class="com.atsimoncc.spring6.iocxml.ditest.Dept">
+        <property name="dname" value="研發部"></property>
+    </bean>
+    <bean id="emp3" class="com.atsimoncc.spring6.iocxml.ditest.Emp">
+        <property name="ename" value="tt"></property>
+        <property name="age" value="666"></property>
+        <property name="dept" ref="dept3"></property>
+        <!--對物件中的屬性賦值-->
+        <property name="dept.dname" value="測試部"></property>
+    </bean>
+</beans>

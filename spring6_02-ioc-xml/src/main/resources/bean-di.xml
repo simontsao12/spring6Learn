@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--1 set方法注入-->
+    <bean id="book" class="com.atsimoncc.spring6.iocxml.di.Book">
+        <property name="bname" value="小黃書"></property>
+        <property name="author" value="卡卡c"></property>
+<!--        <property name="others" >-->
+            <!--兩種寫法-->
+            <!--<null></null>-->
+<!--            <null/>-->
+<!--        </property>-->
+            <!--轉譯-->
+<!--        <property name="others" value="&lt;&gt;"></property>-->
+        <property name="others" >
+            <value><![CDATA[a < b]]></value>
+        </property>
+    </bean>
+    <!--2 constructor注入-->
+    <bean id="book2" class="com.atsimoncc.spring6.iocxml.di.Book">
+        <constructor-arg name="bname" value="小冊冊"></constructor-arg>
+        <constructor-arg index="1" value="測測"></constructor-arg>
+    </bean>
+</beans>

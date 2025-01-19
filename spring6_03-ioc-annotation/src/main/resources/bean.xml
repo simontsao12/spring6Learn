@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--開啟預設為關閉的組件掃描-->
+    <context:component-scan base-package="com.atsimoncc.spring6"></context:component-scan>
+
+    <!--<context:component-scan base-package="com.atsimoncc.spring6">-->
+        <!--context:exclude-filter: 指定排除規則-->
+        <!--
+        type: 設置排除或包含的依據
+        type="annotation" 根據注解排除 expression中設置要排除的注解的全類名
+        type="assignable" 根據類型排除 expression中設置要排除的類型的全類名
+        -->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+        <!--<context:include-filter type="assignable" expression="com.atsimoncc.spring6.controller.UserController"/>-->
+    <!--</context:component-scan>-->
+    <!--<context:component-scan base-package="com.atsimoncc.spring6">-->
+        <!--context:include-filter: 指定排除規則-->
+        <!--
+        type: 設置排除或包含的依據
+        type="annotation" 根據注解指定掃描 expression中設置要掃描的注解的全類名
+        type="assignable" 根據類型指定掃描 expression中設置要掃描的類型的全類名
+        -->
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+        <!--<context:include-filter type="assignable" expression="com.atsimoncc.spring6.controller.UserController"/>-->
+    <!--</context:component-scan>-->
+</beans>
